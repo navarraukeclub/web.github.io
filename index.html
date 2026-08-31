@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navarra UkeClub | Asociación Navarra de Aficionados al Ukelele</title>
+  <meta name="description"
+    content="Navarra UkeClub: Asociación de aficionados al ukelele en Pamplona y Navarra. Encuentros semanales Mierkuleles, cancioneros gratuitos en PDF, talleres y comunidad musical.">
+  <meta name="keywords"
+    content="ukelele navarra, ukelele pamplona, navarra uke club, mierkuleles, cancionero ukelele, asociacion ukelele, acordes ukelele">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navarraukeclub.org/">
+  <meta property="og:title" content="Navarra UkeClub | Asociación Navarra de Aficionados al Ukelele">
+  <meta property="og:description"
+    content="Encuentros semanales Mierkuleles, cancioneros en PDF gratis, comunidad abierta y amor por el ukelele en Navarra. ¡Sin importar tu nivel!">
+  <meta property="og:image" content="img/logo-rojo.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
+  <link rel="apple-touch-icon" href="img/favicon.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #c92a2a;
+      --primary-hover: #b02525;
+      --primary-dark: #861616;
+      --primary-light: #fff5f5;
+      --primary-tint: #ffe3e3;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+
+      --bg-main: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-surface-elevated: #f1f5f9;
+      --bg-card: #ffffff;
+
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+
+      --border-subtle: #e2e8f0;
+      --border-bright: #cbd5e1;
+
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.1), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+      --shadow-primary: 0 8px 24px rgba(201, 42, 42, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section[id] {
+      scroll-margin-top: 105px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* Card Styling */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-bright);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, #e03131 100%);
+      color: #ffffff;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(201, 42, 42, 0.35);
+      background: linear-gradient(135deg, #b02525 0%, #c92a2a 100%);
+      color: #ffffff;
+    }
+
+    .btn-mierkuleles {
+      background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
+      color: #ffffff;
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
+    }
+
+    .btn-mierkuleles:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(2, 132, 199, 0.35);
+      background: linear-gradient(135deg, #1e40af 0%, #0369a1 100%);
+      color: #ffffff;
+    }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.4);
+      color: #ffffff;
+    }
+
+    .btn-instagram {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(220, 39, 67, 0.25);
+    }
+
+    .btn-instagram:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(220, 39, 67, 0.4);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--border-bright);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Section Styling */
+    .section-py {
+      padding-top: 85px;
+      padding-bottom: 85px;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-tint);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-wrapper {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+    }
+
+    .logo-img {
+      height: 85px;
+      width: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.03);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 1.08rem;
+      color: var(--text-muted);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: #ffffff;
+      border-left: 1px solid var(--border-subtle);
+      padding: 30px 24px;
+      z-index: 200;
+      transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-nav-drawer.open {
+      right: 0;
+    }
+
+    .mobile-drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 199;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      padding: 80px 0 100px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(201, 42, 42, 0.1) 0%, rgba(201, 42, 42, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: 5%;
+      right: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, rgba(217, 119, 6, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: #ffffff;
+      border: 1px solid var(--border-bright);
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+      line-height: 1.1;
+      color: var(--text-main);
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 540px;
+      line-height: 1.65;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: flex-start;
+      gap: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-photo-card {
+      padding: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .hero-photo-card img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-photo-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .stat-item h4 {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-card-main {
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-img-wrap {
+      width: 100%;
+      height: 300px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-card-main:hover .hero-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .floating-pill {
+      position: absolute;
+      background: #ffffff;
+      border: 1px solid var(--border-bright);
+      padding: 10px 16px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-md);
+      z-index: 2;
+      animation: floatAnim 4s ease-in-out infinite alternate;
+    }
+
+    .floating-pill-1 {
+      bottom: -10px;
+      left: -15px;
+    }
+
+    .floating-pill-2 {
+      top: 15px;
+      right: -15px;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes floatAnim {
+      0% {
+        transform: translateY(0px);
+      }
+
+      100% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Quienes Somos */
+    .about-section {
+      background: linear-gradient(180deg, #ffffff 0%, #fffcf8 50%, var(--bg-main) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-glow-1 {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(201, 42, 42, 0.07) 0%, rgba(201, 42, 42, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-glow-2 {
+      position: absolute;
+      bottom: 5%;
+      left: 5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.07) 0%, rgba(217, 119, 6, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-card {
+      padding: 32px;
+      border-radius: var(--radius-xl);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .about-card-primary {
+      background: linear-gradient(145deg, #ffffff 0%, #fff5f5 100%);
+      border: 1px solid #fecaca;
+      border-top: 4px solid var(--primary);
+      box-shadow: 0 8px 24px -4px rgba(201, 42, 42, 0.08);
+    }
+
+    .about-card-primary:hover {
+      border-color: var(--primary);
+      box-shadow: 0 16px 36px -6px rgba(201, 42, 42, 0.16);
+      transform: translateY(-3px);
+    }
+
+    .about-card-blue {
+      background: linear-gradient(145deg, #ffffff 0%, #f0f9ff 100%);
+      border: 1px solid #bae6fd;
+      border-top: 4px solid #0284c7;
+      box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.08);
+    }
+
+    .about-card-blue:hover {
+      border-color: #0284c7;
+      box-shadow: 0 16px 36px -6px rgba(2, 132, 199, 0.16);
+      transform: translateY(-3px);
+    }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-tint);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-radius: 9999px;
+    }
+
+    .about-tag-mierkuleles {
+      display: inline-block;
+      color: #0284c7;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      padding: 1px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .about-tag-number {
+      display: inline-block;
+      color: var(--primary);
+      background: #ffffff;
+      border: 1px solid var(--primary-tint);
+      padding: 1px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .about-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .about-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .objectives-section {
+      margin-top: 55px;
+      padding-top: 45px;
+      border-top: 1px solid rgba(226, 232, 240, 0.8);
+      position: relative;
+      z-index: 1;
+    }
+
+    .objectives-title {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text-main);
+    }
+
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .objective-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 26px 22px;
+      border-radius: var(--radius-lg);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .objective-card-red {
+      background: linear-gradient(145deg, #ffffff 0%, #fff5f5 100%);
+      border: 1px solid #fecaca;
+      box-shadow: 0 4px 16px rgba(201, 42, 42, 0.05);
+    }
+
+    .objective-card-red:hover {
+      border-color: #f87171;
+      box-shadow: 0 12px 28px -4px rgba(201, 42, 42, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .objective-card-red .obj-icon {
+      background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+      color: #c92a2a;
+      box-shadow: 0 4px 12px rgba(201, 42, 42, 0.2);
+    }
+
+    .objective-card-red .obj-content h5 {
+      color: #991b1b;
+    }
+
+    .objective-card-amber {
+      background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
+      border: 1px solid #fde68a;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.05);
+    }
+
+    .objective-card-amber:hover {
+      border-color: #fbbf24;
+      box-shadow: 0 12px 28px -4px rgba(217, 119, 6, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .objective-card-amber .obj-icon {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #d97706;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+    }
+
+    .objective-card-amber .obj-content h5 {
+      color: #92400e;
+    }
+
+    .objective-card-blue {
+      background: linear-gradient(145deg, #ffffff 0%, #f0f9ff 100%);
+      border: 1px solid #bae6fd;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);
+    }
+
+    .objective-card-blue:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .objective-card-blue .obj-icon {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    }
+
+    .objective-card-blue .obj-content h5 {
+      color: #075985;
+    }
+
+    .obj-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .objective-card:hover .obj-icon {
+      transform: scale(1.08);
+    }
+
+    .obj-content h5 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .obj-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Mierkuleles Section */
+    .mierkuleles-section {
+      background: linear-gradient(180deg, var(--bg-main) 0%, #fffcf8 50%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mierkuleles-glow-1 {
+      position: absolute;
+      top: 15%;
+      left: -5%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, rgba(2, 132, 199, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .mierkuleles-glow-2 {
+      position: absolute;
+      bottom: 10%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.07) 0%, rgba(217, 119, 6, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .mierkuleles-hero-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-xl);
+      padding: 50px 44px;
+      color: #ffffff;
+      margin-bottom: 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-primary);
+    }
+
+    .mierkuleles-hero-banner h3 {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .mierkuleles-hero-banner p {
+      font-size: 1.12rem;
+      width: 100%;
+      max-width: 100%;
+      line-height: 1.7;
+      opacity: 0.95;
+      color: #ffffff;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .faq-card-red {
+      background: linear-gradient(145deg, #ffffff 0%, #fff5f5 100%);
+      border: 1px solid #fecaca;
+      box-shadow: 0 4px 16px rgba(201, 42, 42, 0.05);
+    }
+
+    .faq-card-red:hover {
+      border-color: #f87171;
+      box-shadow: 0 12px 28px -4px rgba(201, 42, 42, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .faq-card-red .faq-icon {
+      background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+      color: #c92a2a;
+      box-shadow: 0 4px 12px rgba(201, 42, 42, 0.2);
+    }
+
+    .faq-card-red h4 {
+      color: #991b1b;
+    }
+
+    .faq-card-amber {
+      background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
+      border: 1px solid #fde68a;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.05);
+    }
+
+    .faq-card-amber:hover {
+      border-color: #fbbf24;
+      box-shadow: 0 12px 28px -4px rgba(217, 119, 6, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .faq-card-amber .faq-icon {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #d97706;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+    }
+
+    .faq-card-amber h4 {
+      color: #92400e;
+    }
+
+    .faq-card-blue {
+      background: linear-gradient(145deg, #ffffff 0%, #f0f9ff 100%);
+      border: 1px solid #bae6fd;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);
+    }
+
+    .faq-card-blue:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .faq-card-blue .faq-icon {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    }
+
+    .faq-card-blue h4 {
+      color: #075985;
+    }
+
+    .faq-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-card:hover .faq-icon {
+      transform: scale(1.08);
+    }
+
+    .faq-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .faq-card p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    /* Cancioneros / Songbooks Section */
+    .cancioneros-section {
+      background: linear-gradient(180deg, #ffffff 0%, #fffcf8 50%, var(--bg-main) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cancioneros-glow-1 {
+      position: absolute;
+      top: 10%;
+      right: -5%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(201, 42, 42, 0.07) 0%, rgba(201, 42, 42, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cancioneros-glow-2 {
+      position: absolute;
+      bottom: 5%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.07) 0%, rgba(2, 132, 199, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .songbooks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .songbook-card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .songbook-card-blue {
+      background: linear-gradient(145deg, #ffffff 0%, #f0f9ff 100%);
+      border: 1px solid #bae6fd;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.05);
+    }
+    .songbook-card-blue:hover {
+      border-color: #38bdf8;
+      box-shadow: 0 14px 30px -4px rgba(2, 132, 199, 0.16);
+      transform: translateY(-5px);
+    }
+    .songbook-card-blue .songbook-badge {
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #7dd3fc;
+    }
+    .songbook-card-blue .songbook-icon-wrap {
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+      color: #0284c7;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    }
+    .songbook-card-blue h4 {
+      color: #075985;
+    }
+
+    .songbook-card-amber {
+      background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
+      border: 1px solid #fde68a;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.05);
+    }
+    .songbook-card-amber:hover {
+      border-color: #fbbf24;
+      box-shadow: 0 14px 30px -4px rgba(217, 119, 6, 0.16);
+      transform: translateY(-5px);
+    }
+    .songbook-card-amber .songbook-badge {
+      background: #fef3c7;
+      color: #d97706;
+      border: 1px solid #fcd34d;
+    }
+    .songbook-card-amber .songbook-icon-wrap {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      color: #d97706;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+    }
+    .songbook-card-amber h4 {
+      color: #92400e;
+    }
+
+    .songbook-card-rose {
+      background: linear-gradient(145deg, #ffffff 0%, #fff1f2 100%);
+      border: 1px solid #fecdd3;
+      box-shadow: 0 4px 16px rgba(225, 29, 72, 0.05);
+    }
+    .songbook-card-rose:hover {
+      border-color: #fda4af;
+      box-shadow: 0 14px 30px -4px rgba(225, 29, 72, 0.16);
+      transform: translateY(-5px);
+    }
+    .songbook-card-rose .songbook-badge {
+      background: #ffe4e6;
+      color: #e11d48;
+      border: 1px solid #fecdd3;
+    }
+    .songbook-card-rose .songbook-icon-wrap {
+      background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
+      color: #e11d48;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+    }
+    .songbook-card-rose h4 {
+      color: #9f1239;
+    }
+
+    .songbook-card-gold {
+      background: linear-gradient(145deg, #ffffff 0%, #fffdf0 100%);
+      border: 1px solid #fef08a;
+      box-shadow: 0 4px 16px rgba(202, 138, 4, 0.05);
+    }
+    .songbook-card-gold:hover {
+      border-color: #facc15;
+      box-shadow: 0 14px 30px -4px rgba(202, 138, 4, 0.16);
+      transform: translateY(-5px);
+    }
+    .songbook-card-gold .songbook-badge {
+      background: #fef9c3;
+      color: #ca8a04;
+      border: 1px solid #fde047;
+    }
+    .songbook-card-gold .songbook-icon-wrap {
+      background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+      color: #ca8a04;
+      box-shadow: 0 4px 12px rgba(202, 138, 4, 0.2);
+    }
+    .songbook-card-gold h4 {
+      color: #854d0e;
+    }
+
+    .songbook-card-green {
+      background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 16px rgba(22, 163, 74, 0.05);
+    }
+    .songbook-card-green:hover {
+      border-color: #86efac;
+      box-shadow: 0 14px 30px -4px rgba(22, 163, 74, 0.16);
+      transform: translateY(-5px);
+    }
+    .songbook-card-green .songbook-badge {
+      background: #dcfce7;
+      color: #16a34a;
+      border: 1px solid #86efac;
+    }
+    .songbook-card-green .songbook-icon-wrap {
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+      color: #16a34a;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+    }
+    .songbook-card-green h4 {
+      color: #166534;
+    }
+
+    .songbook-card-red {
+      background: linear-gradient(145deg, #ffffff 0%, #fff5f5 100%);
+      border: 1px solid #fecaca;
+      box-shadow: 0 4px 16px rgba(201, 42, 42, 0.05);
+    }
+    .songbook-card-red:hover {
+      border-color: #f87171;
+      box-shadow: 0 14px 30px -4px rgba(201, 42, 42, 0.16);
+      transform: translateY(-5px);
+    }
+    .songbook-card-red .songbook-badge {
+      background: #fee2e2;
+      color: #c92a2a;
+      border: 1px solid #fca5a5;
+    }
+    .songbook-card-red .songbook-icon-wrap {
+      background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%);
+      color: #c92a2a;
+      box-shadow: 0 4px 12px rgba(201, 42, 42, 0.2);
+    }
+    .songbook-card-red h4 {
+      color: #991b1b;
+    }
+
+    .songbook-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+
+    .songbook-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      transition: transform 0.25s ease;
+    }
+
+    .songbook-card:hover .songbook-icon-wrap {
+      transform: scale(1.08);
+    }
+
+    .songbook-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .songbook-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 22px;
+      flex-grow: 1;
+      line-height: 1.6;
+    }
+
+    .btn-download {
+      width: 100%;
+      padding: 10px 18px;
+      font-size: 0.92rem;
+      border-radius: 10px;
+    }
+
+    /* Community & Social Wall */
+    .contacto-section {
+      background: linear-gradient(180deg, var(--bg-main) 0%, #fffcf8 50%, #ffffff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contacto-glow-1 {
+      position: absolute;
+      top: 15%;
+      left: -5%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(201, 42, 42, 0.07) 0%, rgba(201, 42, 42, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .contacto-glow-2 {
+      position: absolute;
+      bottom: 10%;
+      right: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(37, 211, 102, 0.07) 0%, rgba(37, 211, 102, 0) 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .social-banner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      padding: 44px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, #ffffff 0%, #fffcf9 100%);
+      border: 1px solid #fed7d7;
+      box-shadow: 0 12px 36px -6px rgba(201, 42, 42, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-links-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .social-card-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-card-ig {
+      background: linear-gradient(145deg, #ffffff 0%, #fdf2f8 100%);
+      border: 1px solid #fbcfe8;
+      box-shadow: 0 4px 14px rgba(219, 39, 119, 0.05);
+    }
+    .social-card-ig:hover {
+      border-color: #f472b6;
+      background: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 10px 24px -4px rgba(219, 39, 119, 0.18);
+    }
+    .social-card-ig h5 {
+      color: #9d174d;
+    }
+    .social-card-ig .social-card-arrow {
+      color: #db2777;
+    }
+
+    .social-card-fb {
+      background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
+      border: 1px solid #bfdbfe;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.05);
+    }
+    .social-card-fb:hover {
+      border-color: #60a5fa;
+      background: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.18);
+    }
+    .social-card-fb h5 {
+      color: #1e40af;
+    }
+    .social-card-fb .social-card-arrow {
+      color: #2563eb;
+    }
+
+    .social-card-mail {
+      background: linear-gradient(145deg, #ffffff 0%, #fffbeb 100%);
+      border: 1px solid #fde68a;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.05);
+    }
+    .social-card-mail:hover {
+      border-color: #fbbf24;
+      background: #ffffff;
+      transform: translateX(6px);
+      box-shadow: 0 10px 24px -4px rgba(217, 119, 6, 0.18);
+    }
+    .social-card-mail h5 {
+      color: #92400e;
+    }
+    .social-card-mail .social-card-arrow {
+      color: #d97706;
+    }
+
+    .social-card-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .social-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: transform 0.25s ease;
+    }
+
+    .social-card-link:hover .social-icon-box {
+      transform: scale(1.08);
+    }
+
+    .social-icon-box.ig {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(219, 39, 119, 0.25);
+    }
+
+    .social-icon-box.fb {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .social-icon-box.mail {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+    }
+
+    .social-card-arrow {
+      transition: transform 0.25s ease;
+    }
+
+    .social-card-link:hover .social-card-arrow {
+      transform: translateX(4px);
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid var(--border-subtle);
+      padding: 55px 0 25px;
+      margin-top: 70px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 45px;
+      margin-bottom: 35px;
+    }
+
+    .footer-logo-img {
+      height: 85px;
+      width: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .footer-logo-img:hover {
+      transform: scale(1.03);
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 380px;
+      margin-top: 14px;
+    }
+
+    .footer-links h5 {
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      padding-top: 22px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+
+      .hero-grid,
+      .about-grid,
+      .social-banner,
+      .footer-top,
+      .objectives-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .songbooks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links,
+      .nav-cta-btn {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-title {
+        font-size: 2.7rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .floating-pill {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .songbooks-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .section-py {
+        padding-top: 55px;
+        padding-bottom: 55px;
+      }
+
+      .mierkuleles-hero-banner {
+        padding: 32px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header id="header">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo-wrapper" aria-label="Navarra UkeClub Inicio">
+        <img src="img/logo-rojo.jpg" alt="Logo Navarra UkeClub" class="logo-img">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#quienessomos" class="nav-link">Quiénes Somos</a></li>
+        <li><a href="#mierkuleles" class="nav-link">Mierkuleles</a></li>
+        <li><a href="#cancioneros" class="nav-link">Cancioneros</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button class="mobile-menu-btn" id="mobileMenuOpen" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px;">
+      <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.2rem;">Menú</span>
+      <button id="mobileMenuClose"
+        style="background: none; border: none; font-size: 1.4rem; color: var(--text-main); cursor: pointer;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 18px;">
+      <li><a href="#inicio" class="mobile-nav-item" style="font-size: 1.05rem; font-weight: 600;">Inicio</a></li>
+      <li><a href="#quienessomos" class="mobile-nav-item" style="font-size: 1.05rem; font-weight: 600;">Quiénes
+          Somos</a></li>
+      <li><a href="#mierkuleles" class="mobile-nav-item" style="font-size: 1.05rem; font-weight: 600;">Mierkuleles</a>
+      </li>
+      <li><a href="#cancioneros" class="mobile-nav-item" style="font-size: 1.05rem; font-weight: 600;">Cancioneros</a>
+      </li>
+      <li><a href="#contacto" class="mobile-nav-item" style="font-size: 1.05rem; font-weight: 600;">Contacto</a></li>
+    </ul>
+    <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+      <a href="https://www.instagram.com/navarraukeclub/" target="_blank" rel="noopener noreferrer"
+        class="btn btn-instagram" style="width: 100%;">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </a>
+      <a href="https://chat.whatsapp.com/J1jLPiad0KD4m0EeIa7XdU" target="_blank" rel="noopener noreferrer"
+        class="btn btn-whatsapp" style="width: 100%;">
+        <i class="fa-brands fa-whatsapp"></i> Grupo WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Navarra <span>UkeClub</span>
+        </h1>
+        <p class="hero-description">
+          Somos la asociación de aficionados al ukelele en la Comunidad Foral de Navarra. Nos reunimos semanalmente para
+          cantar, tocar y compartir nuestra pasión por las 4 cuerdas. ¡Empezar de cero no es ningún inconveniente!
+        </p>
+        <div class="hero-buttons">
+          <a href="#mierkuleles" class="btn btn-mierkuleles">
+            <i class="fa-solid fa-calendar-days"></i> Mierkuleles
+          </a>
+          <a href="https://www.instagram.com/navarraukeclub/" target="_blank" rel="noopener noreferrer"
+            class="btn btn-instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+          <a href="https://chat.whatsapp.com/J1jLPiad0KD4m0EeIa7XdU" target="_blank" rel="noopener noreferrer"
+            class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Comunidad
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h4><i class="fa-solid fa-calendar-check" style="color: var(--primary); font-size: 0.95rem;"></i> Quedadas
+              Semanales</h4>
+          </div>
+          <div class="stat-item">
+            <h4><i class="fa-solid fa-gift" style="color: var(--accent); font-size: 0.95rem;"></i> Gratuito</h4>
+          </div>
+          <div class="stat-item">
+            <h4><i class="fa-solid fa-music" style="color: var(--primary); font-size: 0.95rem;"></i> 0 Nivel Requerido
+            </h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-photo-card">
+          <img src="img/hero-ukelele.png" alt="Ukelele al atardecer Navarra UkeClub">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiénes Somos -->
+  <section id="quienessomos" class="section-py about-section">
+    <div class="about-glow-1"></div>
+    <div class="about-glow-2"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="text-align: center; margin-bottom: 35px;">
+        <div class="section-tag"><i class="fa-solid fa-users"></i> Quiénes Somos</div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card about-card-primary">
+          <img src="img/logo-rojo.jpg" alt="Navarra UkeClub Identidad"
+            style="max-width: 50%; height: auto; border-radius: var(--radius-md); display: block; margin: 0 auto; box-shadow: var(--shadow-sm);">
+          <div style="margin-top: 20px; text-align: left;">
+            <span class="about-badge">Asociación Sin Ánimo de Lucro</span>
+            <h4 style="margin-top: 8px; font-size: 1.3rem; color: var(--text-main);">Pasión por la música y las 4 cuerdas</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">
+              Inscritos en el Registro de Asociaciones de la Comunidad Foral de Navarra con el número
+              <strong class="about-tag-number">8728</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-card about-card-blue">
+          <h3>Un grupo de apasionados por el <span style="color: var(--primary);">ukelele</span> en Navarra</h3>
+          <p>
+            Navarra UkeClub lo componemos un grupo de aficionados al ukelele que compartimos nuestra pasión por la
+            música y por este pequeño instrumento de 4 cuerdas.
+          </p>
+          <p>
+            El grupo tiene como origen los encuentros y quedadas semanales llamadas <strong class="about-tag-mierkuleles">Mierkuleles</strong>, que
+            son la actividad principal del club. Si te gusta la música, tienes curiosidad o ya tocas, ¡este es tu lugar!
+          </p>
+        </div>
+      </div>
+
+      <!-- Nuestros Objetivos -->
+      <div class="objectives-section">
+        <h4 class="objectives-title">Nuestros <span style="color: var(--primary);">Objetivos</span></h4>
+        <div class="objectives-grid">
+          <div class="objective-card objective-card-red">
+            <div class="obj-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="obj-content">
+              <h5>Difusión del Ukelele</h5>
+              <p>Servir de plataforma de difusión del ukelele en toda la Comunidad Foral de Navarra.</p>
+            </div>
+          </div>
+
+          <div class="objective-card objective-card-amber">
+            <div class="obj-icon"><i class="fa-solid fa-people-roof"></i></div>
+            <div class="obj-content">
+              <h5>Punto de Encuentro</h5>
+              <p>Ser foro y lugar de reunión para los aficionados, sin importar su edad o nivel técnico.</p>
+            </div>
+          </div>
+
+          <div class="objective-card objective-card-blue">
+            <div class="obj-icon"><i class="fa-solid fa-compact-disc"></i></div>
+            <div class="obj-content">
+              <h5>Cultura Musical</h5>
+              <p>Contribuir activamente al desarrollo de la cultura musical navarra tomando el ukelele como eje central.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mierkuleles Section -->
+  <section id="mierkuleles" class="section-py mierkuleles-section">
+    <div class="mierkuleles-glow-1"></div>
+    <div class="mierkuleles-glow-2"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-title-wrap">
+        <div class="section-tag"><i class="fa-solid fa-star"></i> Actividad Principal</div>
+        <h2 class="section-title">Los <span style="color: var(--primary);">Mierkuleles</span></h2>
+        <p class="section-subtitle">Nuestras quedadas semanales: donde la música, la diversión y las risas se unen cada
+          miércoles.</p>
+      </div>
+
+      <div class="mierkuleles-hero-banner">
+        <h3>¿Qué son los Mierkuleles?</h3>
+        <p>
+          Son la actividad principal de Navarra UkeClub. Se trata de una quedada con carácter semanal donde nos reunimos
+          los integrantes del club y cualquier persona con ganas de cantar para compartir experiencias, reír y pasar un
+          rato entrañable.
+        </p>
+        <p style="margin-top: 14px; font-weight: 500;">
+          Muchos de nuestros integrantes no tienen conocimientos musicales previos. Empezar de cero no es ningún
+          inconveniente: ¡vente y aprenderás junto a nosotros!
+        </p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card faq-card-red">
+          <div class="faq-icon"><i class="fa-solid fa-clock"></i></div>
+          <h4>¿Cuándo y dónde se celebran?</h4>
+          <p>
+            Quedamos semanalmente, <strong>siempre en miércoles</strong> y generalmente a las <strong>20:00 h</strong>.
+            El lugar exacto en Pamplona se anuncia puntualmente a través de nuestras redes sociales y nuestro grupo de
+            WhatsApp.
+          </p>
+        </div>
+
+        <div class="faq-card faq-card-amber">
+          <div class="faq-icon"><i class="fa-solid fa-tv"></i></div>
+          <h4>¿Cómo se desarrolla la dinámica?</h4>
+          <p>
+            La mecánica es muy sencilla y participativa. Por turnos, cada persona elige un tema de nuestro cancionero
+            que se proyecta en pantalla grande (con letra y acordes). Lo siguiente es lo mejor: <strong>¡tocar, cantar y
+              divertirse!</strong>
+          </p>
+        </div>
+
+        <div class="faq-card faq-card-blue">
+          <div class="faq-icon"><i class="fa-solid fa-heart-circle-check"></i></div>
+          <h4>¿Necesito llevar un ukelele?</h4>
+          <p>
+            <strong>No, en absoluto.</strong> Solo tienes que traer ganas de pasarlo bien. Puedes cantar con nosotros o,
+            si tocas otro instrumento (percusión, guitarra, armónica...), ¡no hay problema en que te lo traigas y nos
+            acompañes!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cancioneros Section -->
+  <section id="cancioneros" class="section-py cancioneros-section">
+    <div class="cancioneros-glow-1"></div>
+    <div class="cancioneros-glow-2"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-title-wrap">
+        <div class="section-tag"><i class="fa-solid fa-file-pdf"></i> Biblioteca Abierta</div>
+        <h2 class="section-title">Cancioneros <span style="color: var(--primary);">Oficiales</span></h2>
+        <p class="section-subtitle">Navarra UkeClub pone sus cancioneros a disposición de toda la comunidad de forma
+          totalmente gratuita en formato PDF.</p>
+      </div>
+
+      <!-- Songbooks Grid -->
+      <div class="songbooks-grid" id="songbooksGrid">
+
+        <!-- Mierkuleles Songbook -->
+        <div class="songbook-card songbook-card-blue" data-category="principal" data-title="mierkuleles songbook general">
+          <span class="songbook-badge">Imprescindible</span>
+          <div>
+            <div class="songbook-icon-wrap"><i class="fa-solid fa-music"></i></div>
+            <h4>Mierkuleles Songbook</h4>
+            <p>El cancionero principal del club con el repertorio variado que tocamos semana a semana en cada encuentro.
+            </p>
+          </div>
+          <div class="songbook-actions">
+            <a href="books/mierkuleles-songbook.pdf" target="_blank" download class="btn btn-primary btn-download">
+              <i class="fa-solid fa-download"></i> Descargar PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Queen Songbook -->
+        <div class="songbook-card songbook-card-amber" data-category="tematico" data-title="queen songbook rock clasico">
+          <span class="songbook-badge">Especial Rock</span>
+          <div>
+            <div class="songbook-icon-wrap"><i class="fa-solid fa-crown"></i></div>
+            <h4>Queen Songbook</h4>
+            <p>Los grandes éxitos de Queen arreglados y adaptados para ukelele. Bohemian Rhapsody, Don't Stop Me Now y
+              más.</p>
+          </div>
+          <div class="songbook-actions">
+            <a href="books/queen-songbook.pdf" target="_blank" download class="btn btn-primary btn-download">
+              <i class="fa-solid fa-download"></i> Descargar PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Love Songbook -->
+        <div class="songbook-card songbook-card-red" data-category="tematico" data-title="love songbook san valentin amor">
+          <span class="songbook-badge">San Valentín</span>
+          <div>
+            <div class="songbook-icon-wrap"><i class="fa-solid fa-heart"></i></div>
+            <h4>Love Songbook</h4>
+            <p>Selección de canciones románticas, baladas y temas dulces ideales para ukelele en cualquier velada
+              especial.</p>
+          </div>
+          <div class="songbook-actions">
+            <a href="books/love-songbook.pdf" target="_blank" download class="btn btn-primary btn-download">
+              <i class="fa-solid fa-download"></i> Descargar PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Song Contest -->
+        <div class="songbook-card songbook-card-blue" data-category="principal" data-title="song contest navarra ukeclub concurso">
+          <span class="songbook-badge">Concurso</span>
+          <div>
+            <div class="songbook-icon-wrap"><i class="fa-solid fa-trophy"></i></div>
+            <h4>Song Contest Songbook</h4>
+            <p>Recopilación oficial de los temas y composiciones participantes en el certamen musical de Navarra
+              UkeClub.</p>
+          </div>
+          <div class="songbook-actions">
+            <a href="books/songcontest-songbook.pdf" target="_blank" download class="btn btn-primary btn-download">
+              <i class="fa-solid fa-download"></i> Descargar PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Xmas Songbook -->
+        <div class="songbook-card songbook-card-amber" data-category="fiesta" data-title="xmas songbook navidad villancicos">
+          <span class="songbook-badge">Navidad</span>
+          <div>
+            <div class="songbook-icon-wrap"><i class="fa-solid fa-snowflake"></i></div>
+            <h4>Xmas Songbook</h4>
+            <p>Villancicos tradicionales y modernos para alegrar las navidades y los conciertos solidarios del club.</p>
+          </div>
+          <div class="songbook-actions">
+            <a href="books/xmas-songbook.pdf" target="_blank" download class="btn btn-primary btn-download">
+              <i class="fa-solid fa-download"></i> Descargar PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- San Fermín Songbook -->
+        <div class="songbook-card songbook-card-red" data-category="fiesta" data-title="san fermin pamplona fiestas jotas">
+          <span class="songbook-badge">Pamplona</span>
+          <div>
+            <div class="songbook-icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
+            <h4>San Fermín Songbook</h4>
+            <p>Canciones festivas, jotas y los himnos imprescindibles para las fiestas más universales de Navarra.</p>
+          </div>
+          <div class="songbook-actions">
+            <a href="https://ko-fi.com/s/5c6c6330f5" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary btn-download">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver en Ko-fi
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto & Formulario -->
+  <section id="contacto" class="section-py contacto-section">
+    <div class="contacto-glow-1"></div>
+    <div class="contacto-glow-2"></div>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-title-wrap">
+        <div class="section-tag"><i class="fa-solid fa-envelope"></i> Escríbenos</div>
+        <h2 class="section-title">Con<span style="color: var(--primary);">tacto</span></h2>
+        <p class="section-subtitle">¿Tienes alguna pregunta, quieres colaborar o proponer una actividad? Envíanos un
+          mensaje y te responderemos lo antes posible.</p>
+      </div>
+
+      <!-- Social Banner / Conéctate con nosotros -->
+      <div class="social-banner" style="margin-bottom: 40px;">
+        <div>
+          <div class="section-tag"><i class="fa-solid fa-bullhorn"></i> Conéctate con nosotros</div>
+          <h3 style="font-size: 2.2rem; margin-bottom: 14px;">¡Únete a la familia del <span style="color: var(--primary);">ukelele</span> en Navarra!</h3>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">
+            Síguenos en nuestras redes sociales para estar al tanto de los próximos Mierkuleles, talleres de música,
+            conciertos benéficos y quedadas al aire libre.
+          </p>
+          <a href="https://chat.whatsapp.com/J1jLPiad0KD4m0EeIa7XdU" target="_blank" rel="noopener noreferrer"
+            class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Entrar al grupo de WhatsApp
+          </a>
+        </div>
+
+        <div class="social-links-grid">
+          <a href="https://www.instagram.com/navarraukeclub/" target="_blank" rel="noopener noreferrer"
+            class="social-card-link social-card-ig">
+            <div class="social-card-left">
+              <div class="social-icon-box ig"><i class="fa-brands fa-instagram"></i></div>
+              <div>
+                <h5 style="font-size: 1.05rem;">Instagram Oficial</h5>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">@navarraukeclub</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-right social-card-arrow"></i>
+          </a>
+
+          <a href="https://www.facebook.com/NavarraUkeClub" target="_blank" rel="noopener noreferrer"
+            class="social-card-link social-card-fb">
+            <div class="social-card-left">
+              <div class="social-icon-box fb"><i class="fa-brands fa-facebook"></i></div>
+              <div>
+                <h5 style="font-size: 1.05rem;">Página de Facebook</h5>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">/NavarraUkeClub</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-right social-card-arrow"></i>
+          </a>
+
+          <a href="mailto:navarraukeclub@gmail.com" class="social-card-link social-card-mail">
+            <div class="social-card-left">
+              <div class="social-icon-box mail"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h5 style="font-size: 1.05rem;">Correo Electrónico</h5>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">navarraukeclub@gmail.com</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-right social-card-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#inicio" class="logo-wrapper" aria-label="Navarra UkeClub Inicio">
+            <img src="img/logo-rojo.jpg" alt="Logo Navarra UkeClub" class="footer-logo-img">
+          </a>
+          <p>
+            Asociación Navarra de Aficionados al Ukelele
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienessomos">Quiénes Somos</a></li>
+            <li><a href="#mierkuleles">Mierkuleles</a></li>
+            <li><a href="#cancioneros">Cancioneros PDF</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Comunidad</h5>
+          <ul>
+            <li><a href="https://chat.whatsapp.com/J1jLPiad0KD4m0EeIa7XdU" target="_blank" rel="noopener"><i
+                  class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/navarraukeclub/" target="_blank" rel="noopener"><i
+                  class="fa-brands fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.facebook.com/NavarraUkeClub" target="_blank" rel="noopener"><i
+                  class="fa-brands fa-facebook"></i> Facebook</a></li>
+            <li><a href="mailto:navarraukeclub@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Navarra UkeClub. Todos los derechos reservados.</div>
+        <div style="display: flex; gap: 16px;">
+          <span>Hecho con <i class="fa-solid fa-heart" style="color: var(--primary);"></i> para la comunidad del
+            ukelele</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Logic -->
+  <script>
+    // Mobile Navigation Drawer
+    const mobileMenuOpen = document.getElementById('mobileMenuOpen');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+    function openMenu() {
+      mobileDrawer.classList.add('open');
+      drawerOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileDrawer.classList.remove('open');
+      drawerOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    mobileMenuOpen.addEventListener('click', openMenu);
+    mobileMenuClose.addEventListener('click', closeMenu);
+    drawerOverlay.addEventListener('click', closeMenu);
+    mobileNavItems.forEach(item => item.addEventListener('click', closeMenu));
+
+    // Active Link Highlight on Scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 120;
+        const sectionId = section.getAttribute('id');
+        const correspondingLink = document.querySelector(`.nav-links a[href*=${sectionId}]`);
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          if (correspondingLink) {
+            document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+            correspondingLink.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
