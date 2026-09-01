@@ -214,14 +214,14 @@
 
     /* Section Styling */
     .section-py {
-      padding-top: 85px;
-      padding-bottom: 85px;
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
 
     .section-title-wrap {
       text-align: center;
       max-width: 680px;
-      margin: 0 auto 45px;
+      margin: 0 auto 32px;
     }
 
     .section-tag {
@@ -380,11 +380,11 @@
     /* Hero Section */
     .hero-section {
       position: relative;
-      padding: 80px 0 100px;
+      padding: 50px 0 45px;
       overflow: hidden;
       display: flex;
       align-items: center;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+      background: #ffffff;
     }
 
     .hero-glow-1 {
@@ -472,8 +472,7 @@
       display: flex;
       justify-content: flex-start;
       gap: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-subtle);
+      padding-top: 6px;
     }
 
     .hero-visual {
@@ -578,7 +577,9 @@
 
     /* Quienes Somos */
     .about-section {
-      background: linear-gradient(180deg, #ffffff 0%, #fffcf8 50%, var(--bg-main) 100%);
+      background: #f1f5f9;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
       position: relative;
       overflow: hidden;
     }
@@ -706,9 +707,7 @@
     }
 
     .objectives-section {
-      margin-top: 55px;
-      padding-top: 45px;
-      border-top: 1px solid rgba(226, 232, 240, 0.8);
+      margin-top: 45px;
       position: relative;
       z-index: 1;
     }
@@ -835,7 +834,7 @@
 
     /* Mierkuleles Section */
     .mierkuleles-section {
-      background: linear-gradient(180deg, var(--bg-main) 0%, #fffcf8 50%, #ffffff 100%);
+      background: #ffffff;
       position: relative;
       overflow: hidden;
     }
@@ -1003,7 +1002,9 @@
 
     /* Cancioneros / Songbooks Section */
     .cancioneros-section {
-      background: linear-gradient(180deg, #ffffff 0%, #fffcf8 50%, var(--bg-main) 100%);
+      background: #f1f5f9;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
       position: relative;
       overflow: hidden;
     }
@@ -1268,7 +1269,7 @@
 
     /* Community & Social Wall */
     .contacto-section {
-      background: linear-gradient(180deg, var(--bg-main) 0%, #fffcf8 50%, #ffffff 100%);
+      background: #ffffff;
       position: relative;
       overflow: hidden;
     }
@@ -1439,10 +1440,10 @@
 
     /* Footer */
     footer {
-      background: #ffffff;
+      background: #f8fafc;
       border-top: 1px solid var(--border-subtle);
-      padding: 55px 0 25px;
-      margin-top: 70px;
+      padding: 42px 0 22px;
+      margin-top: 0;
     }
 
     .footer-top {
@@ -1512,10 +1513,18 @@
       .hero-grid,
       .about-grid,
       .social-banner,
-      .footer-top,
       .objectives-grid,
       .faq-grid {
         grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 24px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
       }
 
       .songbooks-grid {
@@ -1545,6 +1554,7 @@
     }
 
     @media (max-width: 600px) {
+
       .songbooks-grid,
       .faq-grid {
         grid-template-columns: 1fr;
@@ -1559,9 +1569,13 @@
         gap: 14px;
       }
 
+      .hero-section {
+        padding: 40px 0 35px;
+      }
+
       .section-py {
-        padding-top: 55px;
-        padding-bottom: 55px;
+        padding-top: 36px;
+        padding-bottom: 36px;
       }
 
       .mierkuleles-hero-banner {
