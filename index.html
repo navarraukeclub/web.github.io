@@ -30,6 +30,124 @@
     content="Encuentros semanales Mierkuleles, cancioneros en PDF gratis, comunidad abierta y amor por el ukelele en Navarra.">
   <meta name="twitter:image" content="https://navarraukeclub.org/img/logo-rojo.jpg">
 
+  <!-- Datos Estructurados (Schema.org / JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["NGO", "MusicGroup"],
+        "@id": "https://navarraukeclub.org/#organization",
+        "name": "Navarra UkeClub",
+        "alternateName": "Asociación Navarra de Aficionados al Ukelele",
+        "url": "https://navarraukeclub.org/",
+        "logo": "https://navarraukeclub.org/img/logo-rojo.jpg",
+        "image": "https://navarraukeclub.org/img/logo-rojo.jpg",
+        "description": "Asociación de aficionados al ukelele en Pamplona y la Comunidad Foral de Navarra. Encuentros semanales Mierkuleles, cancioneros gratuitos y comunidad musical abierta a todos los niveles.",
+        "email": "navarraukeclub@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/navarraukeclub/",
+          "https://www.facebook.com/NavarraUkeClub",
+          "https://chat.whatsapp.com/J1jLPiad0KD4m0EeIa7XdU"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pamplona",
+          "addressRegion": "Navarra",
+          "addressCountry": "ES"
+        }
+      },
+      {
+        "@type": "EventSeries",
+        "@id": "https://navarraukeclub.org/#mierkuleles",
+        "name": "Los Mierkuleles - Encuentros de Ukelele",
+        "description": "Encuentros semanales abiertos y gratuitos todos los miércoles para tocar el ukelele y cantar juntos en Pamplona. No se requiere nivel previo.",
+        "eventSchedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1W",
+          "byDay": "https://schema.org/Wednesday"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Pamplona / Iruña",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pamplona",
+            "addressRegion": "Navarra",
+            "addressCountry": "ES"
+          }
+        },
+        "organizer": {
+          "@id": "https://navarraukeclub.org/#organization"
+        },
+        "isAccessibleForFree": true,
+        "inLanguage": "es"
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://navarraukeclub.org/books/mierkuleles-songbook.pdf",
+        "name": "Mierkuleles Songbook",
+        "description": "Cancionero oficial con más de 100 canciones de pop, rock, indie y clásicos adaptados para ukelele con diagramas de acordes.",
+        "url": "https://navarraukeclub.org/books/mierkuleles-songbook.pdf",
+        "fileFormat": "application/pdf",
+        "isAccessibleForFree": true,
+        "inLanguage": "es",
+        "author": {
+          "@id": "https://navarraukeclub.org/#organization"
+        }
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://navarraukeclub.org/books/queen-songbook.pdf",
+        "name": "Queen Songbook",
+        "description": "Cancionero monográfico de Queen adaptado para ukelele con acordes.",
+        "url": "https://navarraukeclub.org/books/queen-songbook.pdf",
+        "fileFormat": "application/pdf",
+        "isAccessibleForFree": true,
+        "author": {
+          "@id": "https://navarraukeclub.org/#organization"
+        }
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://navarraukeclub.org/books/love-songbook.pdf",
+        "name": "Love Songbook",
+        "description": "Cancionero de baladas y canciones románticas para ukelele.",
+        "url": "https://navarraukeclub.org/books/love-songbook.pdf",
+        "fileFormat": "application/pdf",
+        "isAccessibleForFree": true,
+        "author": {
+          "@id": "https://navarraukeclub.org/#organization"
+        }
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://navarraukeclub.org/books/songcontest-songbook.pdf",
+        "name": "Song Contest Songbook",
+        "description": "Cancionero eurovisivo con éxitos del festival adaptados para ukelele.",
+        "url": "https://navarraukeclub.org/books/songcontest-songbook.pdf",
+        "fileFormat": "application/pdf",
+        "isAccessibleForFree": true,
+        "author": {
+          "@id": "https://navarraukeclub.org/#organization"
+        }
+      },
+      {
+        "@type": "DigitalDocument",
+        "@id": "https://navarraukeclub.org/books/xmas-songbook.pdf",
+        "name": "Xmas Songbook",
+        "description": "Villancicos y canciones navideñas tradicionales y modernas para ukelele.",
+        "url": "https://navarraukeclub.org/books/xmas-songbook.pdf",
+        "fileFormat": "application/pdf",
+        "isAccessibleForFree": true,
+        "author": {
+          "@id": "https://navarraukeclub.org/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="img/favicon.jpg">
   <link rel="apple-touch-icon" href="img/favicon.jpg">
@@ -118,6 +236,19 @@
       text-decoration: none;
       color: inherit;
       transition: all 0.25s ease;
+    }
+
+    /* Screen Reader Only (Accessible hidden elements) */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     /* Container */
@@ -536,7 +667,8 @@
       }
     }
 
-    .stat-item h4 {
+    .stat-item h4,
+    .stat-item .stat-item-text {
       font-size: 1.15rem;
       color: var(--text-main);
       font-weight: 700;
@@ -725,7 +857,8 @@
       box-shadow: 0 4px 12px rgba(201, 42, 42, 0.2);
     }
 
-    .objective-card-red .obj-content h5 {
+    .objective-card-red .obj-content h5,
+    .objective-card-red .obj-content h4 {
       color: #991b1b;
     }
 
@@ -747,7 +880,8 @@
       box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
     }
 
-    .objective-card-amber .obj-content h5 {
+    .objective-card-amber .obj-content h5,
+    .objective-card-amber .obj-content h4 {
       color: #166534;
     }
 
@@ -769,7 +903,8 @@
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
     }
 
-    .objective-card-blue .obj-content h5 {
+    .objective-card-blue .obj-content h5,
+    .objective-card-blue .obj-content h4 {
       color: #075985;
     }
 
@@ -789,7 +924,8 @@
       transform: scale(1.08);
     }
 
-    .obj-content h5 {
+    .obj-content h5,
+    .obj-content h4 {
       font-size: 1.15rem;
       margin-bottom: 8px;
       font-weight: 700;
@@ -1046,7 +1182,8 @@
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
     }
 
-    .songbook-card-blue h4 {
+    .songbook-card-blue h4,
+    .songbook-card-blue h3 {
       color: #075985;
     }
 
@@ -1074,7 +1211,8 @@
       box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
     }
 
-    .songbook-card-amber h4 {
+    .songbook-card-amber h4,
+    .songbook-card-amber h3 {
       color: #166534;
     }
 
@@ -1102,7 +1240,8 @@
       box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
     }
 
-    .songbook-card-rose h4 {
+    .songbook-card-rose h4,
+    .songbook-card-rose h3 {
       color: #9f1239;
     }
 
@@ -1130,7 +1269,8 @@
       box-shadow: 0 4px 12px rgba(202, 138, 4, 0.2);
     }
 
-    .songbook-card-gold h4 {
+    .songbook-card-gold h4,
+    .songbook-card-gold h3 {
       color: #854d0e;
     }
 
@@ -1158,7 +1298,8 @@
       box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
     }
 
-    .songbook-card-green h4 {
+    .songbook-card-green h4,
+    .songbook-card-green h3 {
       color: #166534;
     }
 
@@ -1186,7 +1327,8 @@
       box-shadow: 0 4px 12px rgba(201, 42, 42, 0.2);
     }
 
-    .songbook-card-red h4 {
+    .songbook-card-red h4,
+    .songbook-card-red h3 {
       color: #991b1b;
     }
 
@@ -1216,7 +1358,8 @@
       transform: scale(1.08);
     }
 
-    .songbook-card h4 {
+    .songbook-card h4,
+    .songbook-card h3 {
       font-size: 1.25rem;
       margin-bottom: 8px;
       font-weight: 700;
@@ -1442,7 +1585,8 @@
       margin-top: 14px;
     }
 
-    .footer-links h5 {
+    .footer-links h5,
+    .footer-links h4 {
       font-size: 1.05rem;
       margin-bottom: 16px;
       color: var(--text-main);
@@ -1616,6 +1760,7 @@
     </div>
   </div>
 
+  <main id="main-content">
   <!-- Hero Section -->
   <section id="inicio" class="hero-section">
     <div class="hero-glow-1"></div>
@@ -1642,15 +1787,15 @@
         </div>
         <div class="hero-stats">
           <div class="stat-item">
-            <h4><i class="fa-solid fa-calendar-check" style="color: var(--primary); font-size: 0.95rem;"></i> Quedadas
-              Semanales</h4>
+            <span class="stat-item-text"><i class="fa-solid fa-calendar-check" style="color: var(--primary); font-size: 0.95rem;"></i> Quedadas
+              Semanales</span>
           </div>
           <div class="stat-item">
-            <h4><i class="fa-solid fa-gift" style="color: #0284c7; font-size: 0.95rem;"></i> Gratuito</h4>
+            <span class="stat-item-text"><i class="fa-solid fa-gift" style="color: #0284c7; font-size: 0.95rem;"></i> Gratuito</span>
           </div>
           <div class="stat-item">
-            <h4><i class="fa-solid fa-music" style="color: #16a34a; font-size: 0.95rem;"></i> 0 Nivel Requerido
-            </h4>
+            <span class="stat-item-text"><i class="fa-solid fa-music" style="color: #16a34a; font-size: 0.95rem;"></i> 0 Nivel Requerido
+            </span>
           </div>
         </div>
       </div>
@@ -1671,6 +1816,7 @@
     <div class="container" style="position: relative; z-index: 1;">
       <div style="text-align: center; margin-bottom: 35px;">
         <div class="section-tag"><i class="fa-solid fa-users"></i> Quiénes Somos</div>
+        <h2 class="sr-only">Quiénes Somos - Asociación Navarra de Aficionados al Ukelele</h2>
       </div>
 
       <div class="about-grid">
@@ -1679,8 +1825,8 @@
             style="max-width: 50%; height: auto; border-radius: var(--radius-md); display: block; margin: 0 auto; box-shadow: var(--shadow-sm);">
           <div style="margin-top: 20px; text-align: left;">
             <span class="about-badge">Asociación Sin Ánimo de Lucro</span>
-            <h4 style="margin-top: 8px; font-size: 1.3rem; color: var(--text-main);">Pasión por la música y las 4
-              cuerdas</h4>
+            <h3 style="margin-top: 8px; font-size: 1.3rem; color: var(--text-main);">Pasión por la música y las 4
+              cuerdas</h3>
             <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">
               Inscritos en el Registro de Asociaciones de la Comunidad Foral de Navarra con el número
               <strong class="about-tag-number">8728</strong>.
@@ -1704,12 +1850,12 @@
 
       <!-- Nuestros Objetivos -->
       <div class="objectives-section">
-        <h4 class="objectives-title">Nuestros <span style="color: var(--primary);">Objetivos</span></h4>
+        <h3 class="objectives-title">Nuestros <span style="color: var(--primary);">Objetivos</span></h3>
         <div class="objectives-grid">
           <div class="objective-card objective-card-red">
             <div class="obj-icon"><i class="fa-solid fa-bullhorn"></i></div>
             <div class="obj-content">
-              <h5>Difusión del Ukelele</h5>
+              <h4>Difusión del Ukelele</h4>
               <p>Servir de plataforma de difusión del ukelele en toda la Comunidad Foral de Navarra.</p>
             </div>
           </div>
@@ -1717,7 +1863,7 @@
           <div class="objective-card objective-card-amber">
             <div class="obj-icon"><i class="fa-solid fa-people-roof"></i></div>
             <div class="obj-content">
-              <h5>Punto de Encuentro</h5>
+              <h4>Punto de Encuentro</h4>
               <p>Ser foro y lugar de reunión para los aficionados, sin importar su edad o nivel técnico.</p>
             </div>
           </div>
@@ -1725,7 +1871,7 @@
           <div class="objective-card objective-card-blue">
             <div class="obj-icon"><i class="fa-solid fa-compact-disc"></i></div>
             <div class="obj-content">
-              <h5>Cultura Musical</h5>
+              <h4>Cultura Musical</h4>
               <p>Contribuir activamente al desarrollo de la cultura musical navarra tomando el ukelele como eje central.
               </p>
             </div>
@@ -1817,7 +1963,7 @@
           <span class="songbook-badge">Imprescindible</span>
           <div>
             <div class="songbook-icon-wrap"><i class="fa-solid fa-music"></i></div>
-            <h4>Mierkuleles Songbook</h4>
+            <h3>Mierkuleles Songbook</h3>
             <p>El cancionero principal del club con el repertorio variado que tocamos semana a semana en cada encuentro.
             </p>
           </div>
@@ -1834,7 +1980,7 @@
           <span class="songbook-badge">Especial Rock</span>
           <div>
             <div class="songbook-icon-wrap"><i class="fa-solid fa-crown"></i></div>
-            <h4>Queen Songbook</h4>
+            <h3>Queen Songbook</h3>
             <p>Los grandes éxitos de Queen arreglados y adaptados para ukelele. Bohemian Rhapsody, Don't Stop Me Now y
               más.</p>
           </div>
@@ -1851,7 +1997,7 @@
           <span class="songbook-badge">San Valentín</span>
           <div>
             <div class="songbook-icon-wrap"><i class="fa-solid fa-heart"></i></div>
-            <h4>Love Songbook</h4>
+            <h3>Love Songbook</h3>
             <p>Selección de canciones románticas, baladas y temas dulces ideales para ukelele en cualquier velada
               especial.</p>
           </div>
@@ -1868,7 +2014,7 @@
           <span class="songbook-badge">Concurso</span>
           <div>
             <div class="songbook-icon-wrap"><i class="fa-solid fa-trophy"></i></div>
-            <h4>Song Contest Songbook</h4>
+            <h3>Song Contest Songbook</h3>
             <p>Recopilación oficial de los temas y composiciones participantes en el certamen musical de Navarra
               UkeClub.</p>
           </div>
@@ -1885,7 +2031,7 @@
           <span class="songbook-badge">Navidad</span>
           <div>
             <div class="songbook-icon-wrap"><i class="fa-solid fa-snowflake"></i></div>
-            <h4>Xmas Songbook</h4>
+            <h3>Xmas Songbook</h3>
             <p>Villancicos tradicionales y modernos para alegrar las navidades y los conciertos solidarios del club.</p>
           </div>
           <div class="songbook-actions">
@@ -1901,7 +2047,7 @@
           <span class="songbook-badge">Pamplona</span>
           <div>
             <div class="songbook-icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
-            <h4>San Fermín Songbook</h4>
+            <h3>San Fermín Songbook</h3>
             <p>Canciones festivas, jotas y los himnos imprescindibles para las fiestas más universales de Navarra.</p>
           </div>
           <div class="songbook-actions">
@@ -1951,7 +2097,7 @@
             <div class="social-card-left">
               <div class="social-icon-box ig"><i class="fa-brands fa-instagram"></i></div>
               <div>
-                <h5 style="font-size: 1.05rem;">Instagram Oficial</h5>
+                <h4 style="font-size: 1.05rem;">Instagram Oficial</h4>
                 <p style="font-size: 0.85rem; color: var(--text-muted);">@navarraukeclub</p>
               </div>
             </div>
@@ -1963,7 +2109,7 @@
             <div class="social-card-left">
               <div class="social-icon-box fb"><i class="fa-brands fa-facebook"></i></div>
               <div>
-                <h5 style="font-size: 1.05rem;">Página de Facebook</h5>
+                <h4 style="font-size: 1.05rem;">Página de Facebook</h4>
                 <p style="font-size: 0.85rem; color: var(--text-muted);">/NavarraUkeClub</p>
               </div>
             </div>
@@ -1974,7 +2120,7 @@
             <div class="social-card-left">
               <div class="social-icon-box mail"><i class="fa-solid fa-envelope"></i></div>
               <div>
-                <h5 style="font-size: 1.05rem;">Correo Electrónico</h5>
+                <h4 style="font-size: 1.05rem;">Correo Electrónico</h4>
                 <p style="font-size: 0.85rem; color: var(--text-muted);">navarraukeclub@gmail.com</p>
               </div>
             </div>
@@ -1984,6 +2130,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer>
@@ -1999,7 +2146,7 @@
         </div>
 
         <div class="footer-links">
-          <h5>Navegación</h5>
+          <h4>Navegación</h4>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#quienessomos">Quiénes Somos</a></li>
@@ -2010,7 +2157,7 @@
         </div>
 
         <div class="footer-links">
-          <h5>Comunidad</h5>
+          <h4>Comunidad</h4>
           <ul>
             <li><a href="https://chat.whatsapp.com/J1jLPiad0KD4m0EeIa7XdU" target="_blank" rel="noopener"><i
                   class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
