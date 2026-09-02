@@ -471,11 +471,34 @@
 
     .mobile-menu-btn {
       display: none;
+      align-items: center;
+      gap: 8px;
       background: none;
-      border: none;
+      border: 1px solid var(--border-subtle);
+      padding: 7px 12px;
+      border-radius: var(--radius-sm);
       color: var(--text-main);
-      font-size: 1.5rem;
       cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--primary);
+      border-color: var(--border-bright);
+      background: var(--bg-surface-elevated);
+    }
+
+    .mobile-menu-btn i {
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+
+    .mobile-menu-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1;
+      letter-spacing: 0.01em;
     }
 
     /* Mobile Drawer */
@@ -1651,7 +1674,7 @@
       }
 
       .mobile-menu-btn {
-        display: block;
+        display: inline-flex;
       }
 
       .hero-title {
@@ -1723,6 +1746,7 @@
       </ul>
 
       <button class="mobile-menu-btn" id="mobileMenuOpen" aria-label="Abrir menú">
+        <span class="mobile-menu-text">Menú</span>
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
