@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://navarraukeclub.org/sitemap.xml
